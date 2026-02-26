@@ -4,7 +4,7 @@ dist/
 build/
 *.env
 !.env.example
-reports/
+/reports/
 *.log
 .DS_Store
 coverage/
