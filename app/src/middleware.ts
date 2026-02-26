@@ -1,16 +1,33 @@
 import createMiddleware from 'next-intl/middleware';
-import { locales, defaultLocale } from './i18n/request';
+import { NextRequest, NextResponse } from 'next/server';
 
-export default createMiddleware({
-    // A list of all locales that are supported
-    locales,
-
-    // Used when no locale matches
-    defaultLocale,
-    localePrefix: 'always'
+const intlMiddleware = createMiddleware({
+    locales: ['en', 'ar'],
+    defaultLocale: 'en',
+    localePrefix: 'always',
 });
 
+export default function middleware(request: NextRequest) {
+    const { pathname } = request.nextUrl;
+
+    const isProtectedRoute =
+        pathname.includes('/dashboard') ||
+        pathname.includes('/scans') ||
+        pathname.includes('/breaches') ||
+        pathname.includes('/reports') ||
+        pathname.includes('/admin');
+
+    if (isProtectedRoute) {
+        const token = request.cookies.get('auth-token')?.value;
+        if (!token) {
+            const locale = pathname.startsWith('/ar') ? 'ar' : 'en';
+            return NextResponse.redirect(new URL(`/${locale}/auth/login`, request.url));
+        }
+    }
+
+    return intlMiddleware(request);
+}
+
 export const config = {
-    // Match only internationalized pathnames
-    matcher: ['/', '/(ar|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']
+    matcher: ['/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\..*).*)'],
 };
