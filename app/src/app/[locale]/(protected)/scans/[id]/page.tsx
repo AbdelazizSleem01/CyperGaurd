@@ -162,7 +162,7 @@ export default function ScanDetailPage() {
             {t('backToScans')}
           </button>
 
-         
+
         </div>
 
         {/* Header with enhanced styling */}
@@ -312,17 +312,17 @@ export default function ScanDetailPage() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between p-3 bg-base-200/30 rounded-xl">
                       <span className="text-sm text-base-content/60">{t('subject')}</span>
-                      <span className="text-sm font-mono">{scan.ssl.subject}</span>
+                      <span className="text-sm font-mono">{scan.ssl.subject || 'N/A'}</span>
                     </div>
 
                     <div className="flex items-center justify-between p-3 bg-base-200/30 rounded-xl">
                       <span className="text-sm text-base-content/60">{t('validFrom')}</span>
-                      <span className="text-sm">{formatDate(scan.ssl.validFrom, currentLocale as 'en' | 'ar')}</span>
+                      <span className="text-sm">{scan.ssl.validFrom ? formatDate(scan.ssl.validFrom, currentLocale as 'en' | 'ar') : 'N/A'}</span>
                     </div>
 
                     <div className="flex items-center justify-between p-3 bg-base-200/30 rounded-xl">
                       <span className="text-sm text-base-content/60">{t('validUntil')}</span>
-                      <span className="text-sm">{formatDate(scan.ssl.validTo, currentLocale as 'en' | 'ar')}</span>
+                      <span className="text-sm">{scan.ssl.validTo ? formatDate(scan.ssl.validTo, currentLocale as 'en' | 'ar') : 'N/A'}</span>
                     </div>
 
                     {scan.ssl.weakCiphers.length > 0 && (

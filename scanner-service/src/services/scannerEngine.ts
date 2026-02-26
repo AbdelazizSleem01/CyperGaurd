@@ -7,6 +7,7 @@ import { enumerateSubdomains } from './subdomainService';
 import { scanDirectories } from './directoryScanService';
 import { logger } from '../../../shared/utils';
 import { notifyScanComplete } from './notificationService';
+import { IntelligenceOrchestrator } from './intelligence/IntelligenceOrchestrator';
 
 export async function executeFullScan(scanId: string, companyId: string, domain: string, scanTypes: string[]): Promise<void> {
     try {
@@ -22,16 +23,23 @@ export async function executeFullScan(scanId: string, companyId: string, domain:
             completedAt: new Date(),
         };
 
-        // 1. Port Scan
-        if (scanTypes.includes('port-scan')) {
+        const orchestrator = new IntelligenceOrchestrator();
+
+        // 1. Unified Intelligence Scan (VT + Shodan + Fallback)
+        let intelData = null;
+        if (scanTypes.includes('port-scan') || scanTypes.includes('subdomain-enum') || scanTypes.includes('combined')) {
             try {
-                results.ports = await scanPorts(domain);
+                intelData = await orchestrator.getSmartIntelligence(domain);
             } catch (err) {
-                logger.error('Port scan failed', { domain, error: String(err) });
+                logger.error('Intelligence scan failed, proceeding with manual scans', { error: String(err) });
             }
         }
 
-        // 2. SSL Check
+        // 2. Map Results back to specific scan types
+        if (scanTypes.includes('port-scan')) {
+            results.ports = intelData ? intelData.ports : await scanPorts(domain);
+        }
+
         if (scanTypes.includes('ssl-check')) {
             try {
                 results.ssl = await checkSsl(domain);
@@ -40,16 +48,11 @@ export async function executeFullScan(scanId: string, companyId: string, domain:
             }
         }
 
-        // 3. Subdomain Enumeration
         if (scanTypes.includes('subdomain-enum') || scanTypes.includes('combined')) {
-            try {
-                results.subdomains = await enumerateSubdomains(domain);
-            } catch (err) {
-                logger.error('Subdomain enumeration failed', { domain, error: String(err) });
-            }
+            results.subdomains = intelData ? intelData.subdomains : await enumerateSubdomains(domain);
         }
 
-        // 4. Directory Discovery (New!)
+        // 4. Directory Discovery (Always manual as it requires active probing)
         if (scanTypes.includes('directory-scan') || scanTypes.includes('combined')) {
             try {
                 results.discoveredPaths = await scanDirectories(domain);

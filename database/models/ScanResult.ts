@@ -12,8 +12,11 @@ export interface IScanResult extends Document {
   }[];
   ssl: {
     domain: string;
+    validFrom: Date;
+    validTo: Date;
     validUntil: Date;
     issuer: string;
+    subject: string;
     daysUntilExpiry: number;
     weakCiphers: string[];
     isValid: boolean;
@@ -49,8 +52,11 @@ const ScanResultSchema = new Schema<IScanResult>({
   ],
   ssl: {
     domain: String,
+    validFrom: Date,
+    validTo: Date,
     validUntil: Date,
     issuer: String,
+    subject: String,
     daysUntilExpiry: Number,
     weakCiphers: [String],
     isValid: Boolean,

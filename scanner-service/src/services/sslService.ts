@@ -15,9 +15,10 @@ export async function checkSsl(domain: string, port = 443): Promise<SslResult> {
           const cert = socket.getPeerCertificate();
           const cipher = socket.getCipher();
 
-          const validUntil = cert.valid_to ? new Date(cert.valid_to) : new Date(0);
+          const validFrom = cert.valid_from ? new Date(cert.valid_from) : new Date(0);
+          const validTo = cert.valid_to ? new Date(cert.valid_to) : new Date(0);
           const daysUntilExpiry = Math.ceil(
-            (validUntil.getTime() - Date.now()) / (1000 * 60 * 60 * 24)
+            (validTo.getTime() - Date.now()) / (1000 * 60 * 60 * 24)
           );
           const weakCiphers = cipher?.name
             ? WEAK_CIPHERS.filter((wc) => cipher.name.includes(wc))
@@ -26,7 +27,10 @@ export async function checkSsl(domain: string, port = 443): Promise<SslResult> {
           socket.destroy();
           resolve({
             domain,
-            validUntil,
+            validUntil: validTo,
+            validFrom,
+            validTo,
+            subject: cert.subject?.CN || domain,
             issuer: cert.issuer?.O || 'Unknown',
             daysUntilExpiry,
             weakCiphers,
