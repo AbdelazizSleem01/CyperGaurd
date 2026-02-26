@@ -495,15 +495,6 @@ export default function ReportsPage() {
                         </div>
 
                         <div className="flex items-center gap-2">
-                          {/* Preview Button */}
-                          <button
-                            onClick={() => toast.info(t('previewComingSoon'))}
-                            className="btn btn-xs gap-1 text-primary hover:text-primary-focus transition-all duration-200"
-                          >
-                            <span>{t('preview')}</span>
-                            <RiArrowRightLine size={12} />
-                          </button>
-
                           {/* Download Button */}
                           <button
                             onClick={() => handleDownload(report._id, report.format)}
