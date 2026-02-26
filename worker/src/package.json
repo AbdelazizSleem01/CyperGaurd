@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "worker": "ts-node src/scanWorker.ts"
+  }
+}

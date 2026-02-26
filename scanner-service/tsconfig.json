@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "target": "ES2022",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "rootDir": "..",
+    "baseUrl": "..",
+    "paths": {
+      "shared/*": [
+        "shared/*"
+      ],
+      "database/*": [
+        "database/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "../shared/**/*",
+    "../database/**/*"
+  ]
+}

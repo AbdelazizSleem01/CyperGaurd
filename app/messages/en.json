@@ -1,0 +1,1338 @@
+{
+  "metadata": {
+    "title": "CyberGuard — Cybersecurity Monitoring Platform",
+    "description": "Enterprise-grade cybersecurity monitoring: credential breach detection, external surface scanning, risk assessment, and automated reporting.",
+    "keywords": "cybersecurity, breach detection, security monitoring, risk assessment, network security",
+    "ogTitle": "CyberGuard — Protect Your Organization",
+    "ogDescription": "Monitor, detect, and respond to cybersecurity threats in real-time."
+  },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "backHome": "Back to Home",
+    "errorShield": "Security Alert: Resource Missing"
+  },
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "about": "About",
+      "contact": "Contact",
+      "security": "Security",
+      "login": "Login",
+      "register": "Get Started",
+      "portScanning": "Port Scanning",
+      "sslMonitoring": "SSL Monitoring",
+      "breachDetection": "Breach Detection"
+    },
+    "footer": {
+      "product": "Product",
+      "company": "Company",
+      "legal": "Legal",
+      "support": "Support",
+      "allRights": "All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "security": "Security",
+      "description": "Enterprise security monitoring platform. Protect your organization from cyber threats.",
+      "careers": "Careers"
+    },
+    "home": {
+      "badge": "Enterprise Security Platform",
+      "hero": {
+        "title": "Protect Your Organization from",
+        "subtitleHighlight": "Cyber Threats",
+        "description": "Real-time breach detection, continuous monitoring, and comprehensive risk assessment. Stay ahead of threats with CyberGuard's enterprise security platform.",
+        "cta": "Start Free Trial",
+        "ctaSecondary": "Learn More"
+      },
+      "trustedBy": "Trusted by security teams at",
+      "trustBadges": {
+        "noCreditCard": "No credit card required",
+        "freeTrial": "14-day free trial",
+        "cancelAnytime": "Cancel anytime",
+        "support24": "24/7 support"
+      },
+      "features": {
+        "securityScore": "Security Score",
+        "securityScoreDesc": "Real-time security rating with improvement recommendations.",
+        "darkWeb": "Dark Web Monitoring",
+        "darkWebDesc": "Continuous scanning of dark web for compromised credentials.",
+        "smartAlerts": "Smart Alerts",
+        "smartAlertsDesc": "AI-powered threat prioritization and intelligent notifications."
+      },
+      "stats": {
+        "organizations": "Organizations Protected",
+        "credentials": "Credentials Monitored",
+        "uptime": "Uptime SLA",
+        "response": "Alert Response Time"
+      },
+      "featuresSection": {
+        "badge": "Powerful Features",
+        "title": "Comprehensive Security Features",
+        "subtitle": "Everything you need to protect your organization from evolving cyber threats"
+      },
+      "howItWorks": {
+        "badge": "Simple Process",
+        "title": "How It Works",
+        "subtitle": "Get started in minutes with our simple setup process",
+        "step1": {
+          "title": "Connect Your Domain",
+          "description": "Add your organization's domain and email addresses to monitor in seconds."
+        },
+        "step2": {
+          "title": "We Scan Continuously",
+          "description": "Our system runs automated security scans and monitors for breaches 24/7."
+        },
+        "step3": {
+          "title": "Get Instant Alerts",
+          "description": "Receive real-time notifications when threats are detected via email and dashboard."
+        }
+      },
+      "testimonials": {
+        "badge": "Customer Stories",
+        "title": "Trusted by Security Teams",
+        "subtitle": "See what our customers say about CyberGuard",
+        "ahmed": {
+          "name": "Ahmed Hassan",
+          "role": "CTO at TechCorp",
+          "content": "CyberGuard transformed our security posture. We now detect threats before they become breaches."
+        },
+        "sara": {
+          "name": "Sara Ahmed",
+          "role": "Security Lead at FinTech",
+          "content": "The continuous monitoring and instant alerts have been invaluable for our compliance requirements."
+        },
+        "mohamed": {
+          "name": "Mohamed Ali",
+          "role": "IT Director at E-commerce",
+          "content": "Easy to set up, comprehensive features, and excellent support. Highly recommended!"
+        }
+      },
+      "pricing": {
+        "badge": "Simple Pricing",
+        "basicScanning": "Basic Scanning",
+        "advancedScanning": "Advanced Scanning",
+        "realtimeAlerts": "Real-time Alerts",
+        "apiAccess": "API Access",
+        "customReports": "Custom Reports",
+        "advancedAnalytics": "Advanced Analytics",
+        "soc2Reports": "SOC2 Reports",
+        "guarantee": "30-day money-back guarantee • No questions asked"
+      },
+      "cta": {
+        "title": "Ready to Secure Your Organization?",
+        "subtitle": "Join thousands of organizations protecting their digital assets with CyberGuard",
+        "button": "Start Your Free Trial",
+        "contact": "Contact Sales"
+      }
+    },
+    "about": {
+      "title": "About CyberGuard",
+      "subtitle": "We are on a mission to make enterprise-grade security accessible to every organization",
+      "mission": {
+        "title": "Our Mission",
+        "description": "At CyberGuard, we believe that every organization deserves access to world-class security tools. We are building the platform that makes continuous security monitoring, breach detection, and risk assessment accessible to teams of all sizes."
+      },
+      "values": {
+        "title": "Our Values",
+        "items": {
+          "security": "Security First",
+          "securityDesc": "We believe security should be accessible to everyone, not just large enterprises.",
+          "innovation": "Innovation",
+          "innovationDesc": "Constantly evolving our technology to stay ahead of emerging threats.",
+          "customer": "Customer Focus",
+          "customerDesc": "Your security is our mission. We are here to protect what matters most.",
+          "global": "Global Reach",
+          "globalDesc": "Protecting organizations worldwide with 24/7 monitoring and support."
+        }
+      },
+      "journey": {
+        "title": "Our Journey",
+        "milestones": {
+          "2020": {
+            "title": "Founded",
+            "description": "CyberGuard was founded with a mission to democratize security."
+          },
+          "2021": {
+            "title": "First 1,000 Customers",
+            "description": "Reached our first milestone of 1,000 organizations protected."
+          },
+          "2022": {
+            "title": "Series A Funding",
+            "description": "Raised $5M to expand our security platform globally."
+          },
+          "2023": {
+            "title": "10,000+ Organizations",
+            "description": "Now protecting over 10,000 organizations worldwide."
+          },
+          "2024": {
+            "title": "Enterprise Launch",
+            "description": "Launched enterprise features with dedicated support."
+          }
+        }
+      },
+      "team": {
+        "title": "Leadership Team"
+      },
+      "stats": {
+        "organizations": "Organizations Protected",
+        "credentials": "Credentials Monitored",
+        "uptime": "Uptime SLA",
+        "support": "Support Available"
+      },
+      "cta": {
+        "title": "Join Our Mission",
+        "description": "We are always looking for talented individuals who share our passion for security",
+        "contact": "Contact Us",
+        "features": "Explore Features"
+      }
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "subtitle": "Have questions about our security services? We would love to hear from you.",
+      "info": {
+        "email": {
+          "title": "Email",
+          "description": "Get in touch via email",
+          "value": "cypergaurd@gmail.com"
+        },
+        "phone": {
+          "title": "Phone",
+          "description": "Call us during business hours",
+          "value": "+201012105407"
+        },
+        "address": {
+          "title": "Address",
+          "description": "Visit our headquarters",
+          "value": "Eltahrer St, Cairo, Egypt"
+        }
+      },
+      "departments": {
+        "title": "Departments",
+        "sales": "Sales & Pricing",
+        "support": "Technical Support",
+        "partnerships": "Partnerships",
+        "legal": "Legal & Compliance",
+        "emergency": "Emergency"
+      },
+      "faq": {
+        "title": "Quick Answers",
+        "responseTime": "What's your response time?",
+        "responseTimeAnswer": "We typically respond within 1-2 hours during business hours. Enterprise customers get priority support with 24/7 emergency response.",
+        "support24": "Do you offer 24/7 support?",
+        "support24Answer": "Yes! Emergency support is available 24/7 for Enterprise customers. Standard support is available during business hours.",
+        "demo": "Can I schedule a demo?",
+        "demoAnswer": "Absolutely! Our sales team would be happy to schedule a personalized demo at your convenience."
+      },
+      "form": {
+        "title": "Send us a Message",
+        "responseTime": "We typically respond within 1-2 hours",
+        "name": "Full Name",
+        "email": "Email",
+        "department": "Department",
+        "selectDepartment": "Select a department",
+        "message": "Message",
+        "messagePlaceholder": "How can we help you? Please provide as much detail as possible...",
+        "send": "Send Message",
+        "sending": "Sending Message...",
+        "success": {
+          "title": "Message Sent!",
+          "description": "Thank you for contacting us. We will get back to you within 24 hours.",
+          "another": "Send Another Message",
+          "back": "Back to Home"
+        },
+        "error": "Something went wrong. Please try again.",
+        "securityNote": "Enterprise-grade security: Your information is encrypted and protected. We'll never share your details with third parties.",
+        "sslSecured": "SSL Secured",
+        "encryption": "256-bit Encryption",
+        "avgResponse": "Average response: 1-2 hours"
+      },
+      "trustedBy": "Trusted by 10,000+ customers"
+    },
+    "features": {
+      "title": "Powerful Security Features",
+      "subtitle": "Comprehensive security monitoring and threat detection for your organization",
+      "learnMore": "Learn more",
+      "cta": {
+        "title": "Ready to secure your organization?",
+        "description": "Start your free trial today. No credit card required.",
+        "trial": "Start Free Trial",
+        "pricing": "View Pricing"
+      },
+      "items": {
+        "portScanning": {
+          "title": "Port Scanning",
+          "description": "Continuous monitoring of open ports and services on your infrastructure.",
+          "features": [
+            "Automated daily scans",
+            "Service fingerprinting",
+            "Vulnerability detection",
+            "Port history tracking"
+          ]
+        },
+        "sslMonitoring": {
+          "title": "SSL Certificate Monitoring",
+          "description": "Track SSL certificate expiry and ensure secure connections.",
+          "features": [
+            "Expiry alerts",
+            "Chain validation",
+            "Protocol checks",
+            "Certificate transparency"
+          ]
+        },
+        "breachDetection": {
+          "title": "Breach Detection",
+          "description": "Real-time alerts when your credentials appear in data breaches.",
+          "features": [
+            "Dark web monitoring",
+            "Email breach alerts",
+            "Password exposure check",
+            "Domain monitoring"
+          ]
+        },
+        "subdomainEnumeration": {
+          "title": "Subdomain Enumeration",
+          "description": "Discover and monitor all subdomains of your organization.",
+          "features": [
+            "Passive DNS",
+            "Certificate logs",
+            "Cloud resources",
+            "Takeover detection"
+          ]
+        },
+        "riskAssessment": {
+          "title": "Risk Assessment",
+          "description": "Comprehensive risk scoring with actionable recommendations.",
+          "features": [
+            "Risk scoring",
+            "Priority alerts",
+            "Remediation guides",
+            "Compliance reports"
+          ]
+        },
+        "emailNotifications": {
+          "title": "Email Notifications",
+          "description": "Instant alerts via email for critical security findings.",
+          "features": [
+            "Customizable alerts",
+            "Digest reports",
+            "Team notifications",
+            "Slack integration"
+          ]
+        }
+      }
+    },
+    "featureBreach": {
+      "title": "Breach Detection",
+      "subtitle": "Real-time alerts when your credentials appear in data breaches",
+      "howItWorks": {
+        "title": "How It Works",
+        "description": "Our breach detection service monitors data breaches, paste sites, and dark web forums for your credentials. When we find your data, we alert you immediately so you can take action to protect your accounts.",
+        "scanning": {
+          "title": "Continuous Scanning",
+          "description": "24/7 monitoring of breach databases"
+        },
+        "notifications": {
+          "title": "Instant Notifications",
+          "description": "Get alerted the moment we find your data"
+        },
+        "historical": {
+          "title": "Historical Checks",
+          "description": "Check past breaches for your credentials"
+        }
+      },
+      "keyFeatures": {
+        "title": "Key Features",
+        "darkWeb": "Dark Web Monitoring",
+        "darkWebDesc": "Scan dark web forums and marketplaces for your data.",
+        "emailBreach": "Email Breach Alerts",
+        "emailBreachDesc": "Get notified when your email appears in a breach.",
+        "password": "Password Exposure Check",
+        "passwordDesc": "Check if your passwords have been compromised.",
+        "domain": "Domain Monitoring",
+        "domainDesc": "Monitor all email addresses on your domain.",
+        "api": "API Integration",
+        "apiDesc": "Integrate breach data into your security tools.",
+        "historical": "Historical Data",
+        "historicalDesc": "Access breach data going back years."
+      },
+      "cta": {
+        "title": "Protect Your Credentials",
+        "description": "Know immediately when your data is compromised",
+        "trial": "Start Free Trial",
+        "allFeatures": "All Features"
+      }
+    },
+    "featureScanning": {
+      "title": "Port Scanning",
+      "subtitle": "Continuous monitoring of open ports and services on your infrastructure",
+      "howItWorks": {
+        "title": "How It Works",
+        "description": "Our port scanning service continuously monitors your infrastructure for open ports and running services. We use a combination of TCP SYN scanning, UDP probing, and service fingerprinting to provide comprehensive visibility into your attack surface.",
+        "realtime": {
+          "title": "Real-time Monitoring",
+          "description": "24/7 scanning with instant alerts"
+        },
+        "cve": {
+          "title": "CVE Detection",
+          "description": "Identify known vulnerabilities automatically"
+        },
+        "service": {
+          "title": "Service Identification",
+          "description": "Detect services, versions, and configurations"
+        }
+      },
+      "keyFeatures": {
+        "title": "Key Features",
+        "automated": "Automated Daily Scans",
+        "automatedDesc": "Scheduled scans run automatically to detect new vulnerabilities.",
+        "fingerprinting": "Service Fingerprinting",
+        "fingerprintingDesc": "Identify running services and versions on open ports.",
+        "vulnerability": "Vulnerability Detection",
+        "vulnerabilityDesc": "Detect known CVEs and security misconfigurations.",
+        "history": "Port History Tracking",
+        "historyDesc": "Track changes in your attack surface over time.",
+        "protocol": "Multi-Protocol Support",
+        "protocolDesc": "Scan TCP, UDP, and custom protocols.",
+        "rateLimit": "Rate Limiting",
+        "rateLimitDesc": "Safe scanning that won't overwhelm your systems."
+      },
+      "cta": {
+        "title": "Start Scanning Today",
+        "description": "Get visibility into your attack surface in minutes",
+        "trial": "Start Free Trial",
+        "allFeatures": "All Features"
+      }
+    },
+    "featureSSL": {
+      "title": "SSL Certificate Monitoring",
+      "subtitle": "Track SSL certificate expiry and ensure secure connections for your users",
+      "howItWorks": {
+        "title": "How It Works",
+        "description": "Our SSL monitoring service continuously checks your certificates for expiry, configuration issues, and security vulnerabilities. We validate the entire certificate chain and alert you to potential problems before they impact your users.",
+        "expiry": {
+          "title": "Expiry Monitoring",
+          "description": "Never let a certificate expire unexpectedly"
+        },
+        "security": {
+          "title": "Security Validation",
+          "description": "Check for best practices and vulnerabilities"
+        },
+        "alerts": {
+          "title": "Instant Alerts",
+          "description": "Get notified immediately of any issues"
+        }
+      },
+      "keyFeatures": {
+        "title": "Key Features",
+        "expiry": "Expiry Alerts",
+        "expiryDesc": "Get notified 30, 14, and 7 days before certificate expiration.",
+        "chain": "Chain Validation",
+        "chainDesc": "Verify the complete certificate chain for trust issues.",
+        "protocol": "Protocol Checks",
+        "protocolDesc": "Ensure TLS 1.2+ is enabled and weak protocols disabled.",
+        "transparency": "Certificate Transparency",
+        "transparencyDesc": "Monitor CT logs for unauthorized certificates.",
+        "cipher": "Cipher Suite Analysis",
+        "cipherDesc": "Identify weak or deprecated cipher suites.",
+        "multiDomain": "Multi-domain Support",
+        "multiDomainDesc": "Monitor certificates across all your domains."
+      },
+      "cta": {
+        "title": "Protect Your Certificates",
+        "description": "Never let an expired certificate disrupt your business",
+        "trial": "Start Free Trial",
+        "allFeatures": "All Features"
+      }
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "Choose the plan that fits your organization's security needs",
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "price": "Free",
+          "description": "Perfect for small teams getting started",
+          "cta": "Get Started",
+          "features": {
+            "domain": "1 Domain monitoring",
+            "breach": "Basic breach monitoring",
+            "reports": "Weekly email reports",
+            "support": "Email support",
+            "team": "5 team members"
+          }
+        },
+        "professional": {
+          "name": "Professional",
+          "price": "$49",
+          "period": "/month",
+          "description": "For growing organizations",
+          "cta": "Start Free Trial",
+          "popular": "Most Popular",
+          "features": {
+            "domain": "5 Domain monitoring",
+            "port": "Advanced port scanning",
+            "alerts": "Real-time breach alerts",
+            "ssl": "SSL certificate monitoring",
+            "risk": "Risk assessment reports",
+            "support": "Priority email support",
+            "team": "25 team members"
+          }
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "price": "Custom",
+          "description": "For large organizations",
+          "cta": "Contact Sales",
+          "features": {
+            "domain": "Unlimited domains",
+            "integrations": "Custom integrations",
+            "manager": "Dedicated support manager",
+            "sla": "SLA guarantee",
+            "onPremise": "On-premise deployment option",
+            "reporting": "Custom reporting",
+            "team": "Unlimited team members"
+          }
+        }
+      },
+      "comparison": {
+        "title": "Feature Comparison",
+        "feature": "Feature",
+        "domains": "Domains",
+        "unlimited": "Unlimited",
+        "portScanning": "Port Scanning",
+        "sslMonitoring": "SSL Monitoring",
+        "breachDetection": "Breach Detection",
+        "basic": "Basic",
+        "advanced": "Advanced",
+        "riskAssessment": "Risk Assessment",
+        "apiAccess": "API Access",
+        "ssoSaml": "SSO/SAML",
+        "dedicatedSupport": "Dedicated Support",
+        "priority": "Priority",
+        "dedicatedManager": "Dedicated Manager"
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "trial": {
+          "question": "Can I try before I buy?",
+          "answer": "Yes! We offer a 14-day free trial on all paid plans. No credit card required."
+        },
+        "payment": {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept all major credit cards, PayPal, and wire transfers for Enterprise plans."
+        },
+        "change": {
+          "question": "Can I change plans later?",
+          "answer": "Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately."
+        },
+        "discount": {
+          "question": "Is there a discount for annual billing?",
+          "answer": "Yes! Save 20% when you pay annually on Professional plans."
+        }
+      },
+      "cta": {
+        "title": "Still have questions?",
+        "description": "Our team is here to help you find the right plan.",
+        "contact": "Contact Sales"
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated",
+      "trustBadge": "GDPR Compliant • CCPA Ready • SOC2 Type II",
+      "toc": "TABLE OF CONTENTS",
+      "quickActions": {
+        "title": "Quick Actions",
+        "contact": "Contact Privacy Team",
+        "terms": "Terms of Service",
+        "security": "Security Overview"
+      },
+      "sections": {
+        "introduction": {
+          "title": "1. Introduction",
+          "content": "CyberGuard (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our security monitoring platform.",
+          "commitment": "Our Commitment",
+          "commitmentText": "We believe in transparency and giving you control over your data. This policy outlines our practices in clear, simple language."
+        },
+        "collection": {
+          "title": "2. Information We Collect",
+          "intro": "We may collect information about you in various ways:",
+          "items": {
+            "account": {
+              "title": "Account Information",
+              "desc": "Name, email address, company name, and domain information."
+            },
+            "security": {
+              "title": "Security Data",
+              "desc": "Domain scan results, breach detection data, and risk assessments."
+            },
+            "usage": {
+              "title": "Usage Data",
+              "desc": "Information about how you interact with our platform."
+            },
+            "device": {
+              "title": "Device Information",
+              "desc": "IP address, browser type, and device identifiers."
+            }
+          }
+        },
+        "usage": {
+          "title": "3. How We Use Your Information",
+          "intro": "We use the information we collect to:",
+          "items": [
+            "Provide, operate, and maintain our security monitoring services",
+            "Send security alerts and notifications about detected threats",
+            "Improve our services and develop new features",
+            "Communicate with you about updates and support",
+            "Comply with legal obligations and protect our rights"
+          ]
+        },
+        "security": {
+          "title": "4. Data Security",
+          "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes encryption at rest and in transit, regular security assessments, and access controls.",
+          "badges": [
+            "256-bit Encryption",
+            "SOC2 Type II",
+            "Regular Audits"
+          ]
+        },
+        "retention": {
+          "title": "5. Data Retention",
+          "content": "We retain your information for as long as your account is active or as needed to provide services. Security scan data may be retained for up to 2 years for historical analysis and compliance purposes. You can request deletion of your data at any time."
+        },
+        "thirdParty": {
+          "title": "6. Third-Party Services",
+          "content": "We may use third-party services for breach detection databases, email delivery, and analytics. These providers are bound by confidentiality agreements and are not permitted to use your information for any purpose other than providing services to us."
+        },
+        "rights": {
+          "title": "7. Your Rights",
+          "intro": "You have the right to:",
+          "items": [
+            "Access your personal data",
+            "Correct inaccurate data",
+            "Request deletion",
+            "Object to processing",
+            "Export your data",
+            "Withdraw consent"
+          ]
+        },
+        "cookies": {
+          "title": "8. Cookies",
+          "content": "We use cookies and similar technologies to enhance your experience. You can control cookie settings through your browser. Essential cookies are required for the platform to function properly."
+        },
+        "children": {
+          "title": "9. Children's Privacy",
+          "content": "Our services are not directed to individuals under 18. We do not knowingly collect information from children. If you believe we have collected information from a child, please contact us immediately."
+        },
+        "changes": {
+          "title": "10. Changes to This Policy",
+          "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the \"Last updated\" date."
+        },
+        "contact": {
+          "title": "11. Contact Us",
+          "intro": "If you have questions about this Privacy Policy, please contact us at:",
+          "email": "Email",
+          "address": "Address",
+          "company": "CyberGuard Security Inc.",
+          "location": "Cairo, Egypt",
+          "responseTime": "Response time: Within 24-48 hours on business days"
+        }
+      },
+      "backToHome": "Back to Home"
+    },
+    "security": {
+      "title": "Enterprise-Grade Security",
+      "subtitle": "Your security is our top priority. We build our platform with security at every layer.",
+      "features": {
+        "title": "Security Features",
+        "encryption": {
+          "title": "End-to-End Encryption",
+          "description": "All data is encrypted in transit using TLS 1.3 and at rest using AES-256 encryption."
+        },
+        "infrastructure": {
+          "title": "Secure Infrastructure",
+          "description": "Hosted on AWS with SOC 2 Type II certified data centers and 24/7 monitoring."
+        },
+        "access": {
+          "title": "Access Controls",
+          "description": "Role-based access control (RBAC) with multi-factor authentication for all users."
+        },
+        "audit": {
+          "title": "Audit Logging",
+          "description": "Comprehensive audit logs for all actions with immutable storage."
+        },
+        "residency": {
+          "title": "Data Residency",
+          "description": "Choose where your data is stored with our regional data centers."
+        },
+        "incident": {
+          "title": "Incident Response",
+          "description": "Dedicated security team with 24/7 incident response capabilities."
+        }
+      },
+      "compliance": {
+        "title": "Compliance & Certifications",
+        "certified": "Certified",
+        "compliant": "Compliant",
+        "level1": "Level 1"
+      },
+      "practices": {
+        "title": "Our Security Practices",
+        "item1": "Regular third-party penetration testing",
+        "item2": "Annual security audits by independent firms",
+        "item3": "Mandatory cybersecurity training for all employees",
+        "item4": "Least privilege access control policies",
+        "item5": "24/7 network monitoring and threat detection",
+        "item6": "Incident response plans and disaster recovery programs"
+      },
+      "vulnerability": {
+        "title": "Report a Vulnerability",
+        "description": "We appreciate responsible disclosure of security vulnerabilities. If you discover a security issue, please report it to our security team.",
+        "email": "security@cyberguard.com",
+        "responseTime": "We respond to security reports within 24 hours"
+      },
+      "dataProtection": {
+        "title": "Your Data, Your Control",
+        "description": "We never sell your data. You maintain full ownership and control over your information. Delete your data at any time, no questions asked.",
+        "badges": "Data Ownership, Right to Delete, No Data Selling, GDPR Compliant"
+      },
+      "cta": {
+        "title": "Have Security Questions?",
+        "description": "Our security team is available to discuss your organization's specific security requirements",
+        "contact": "Contact Security Team",
+        "privacy": "Privacy Policy"
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated",
+      "trustBadge": "Legally Binding • Enterprise Grade • 100% Compliant",
+      "toc": "TABLE OF CONTENTS",
+      "quickActions": {
+        "title": "Quick Actions",
+        "privacy": "Privacy Policy",
+        "contact": "Contact Legal Team",
+        "security": "Security Overview"
+      },
+      "download": {
+        "title": "Download Terms",
+        "pdf": "PDF Version",
+        "text": "Plain Text"
+      },
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptance of Terms",
+          "content": "By accessing and using CyberGuard's security monitoring platform, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by these terms, please do not use this service.",
+          "important": "Important",
+          "importantText": "These terms constitute a legally binding agreement between you and CyberGuard. Please read them carefully."
+        },
+        "description": {
+          "title": "2. Description of Service",
+          "intro": "CyberGuard provides enterprise security monitoring services including:"
+        },
+        "accounts": {
+          "title": "3. User Accounts",
+          "content": "You are responsible for maintaining the confidentiality of your account credentials. You agree to notify us immediately of any unauthorized use of your account. We are not liable for any loss or damage arising from your failure to protect your account.",
+          "warning": "Enable 2FA for additional security"
+        },
+        "acceptableUse": {
+          "title": "4. Acceptable Use",
+          "intro": "You agree to use CyberGuard only for lawful purposes:",
+          "rules": [
+            "You must have authorization to scan any domains or IP addresses you add to the platform",
+            "You may not use the service to harm, exploit, or attack third-party systems",
+            "You may not attempt to reverse engineer or compromise our security systems",
+            "You must comply with all applicable laws and regulations",
+            "You may not resell or redistribute our services without written permission",
+            "You must not use the service for any illegal or unauthorized purpose"
+          ]
+        },
+        "payment": {
+          "title": "5. Subscription and Payment",
+          "content": "Some features require a paid subscription. You agree to pay all fees associated with your account. Subscriptions automatically renew unless cancelled before the renewal date. Prices may change with 30 days notice.",
+          "badges": [
+            "Monthly Billing",
+            "Annual Discount",
+            "30-Day Refund"
+          ]
+        },
+        "data": {
+          "title": "6. Data and Content",
+          "content": "You retain ownership of data you submit to CyberGuard. You grant us a license to process this data solely for providing our services. We may use anonymized, aggregated data to improve our services and for security research."
+        },
+        "serviceLevel": {
+          "title": "7. Service Level",
+          "content": "We strive to maintain 99.9% uptime for our services. We do not guarantee uninterrupted access and are not liable for temporary service interruptions. We will provide notice of scheduled maintenance when possible."
+        },
+        "liability": {
+          "title": "8. Limitation of Liability",
+          "content": "CyberGuard is provided \"as is\" without warranties of any kind. We are not liable for any indirect, incidental, special, or consequential damages arising from your use of the service. Our total liability shall not exceed the amount paid by you in the 12 months preceding the claim."
+        },
+        "indemnification": {
+          "title": "9. Indemnification",
+          "content": "You agree to indemnify and hold harmless CyberGuard and its affiliates from any claims, damages, or expenses arising from your use of the service or violation of these terms."
+        },
+        "termination": {
+          "title": "10. Termination",
+          "content": "We may terminate or suspend your account at any time for violations of these terms. You may cancel your subscription at any time. Upon termination, your access to the service and your data will be removed within 30 days."
+        },
+        "intellectualProperty": {
+          "title": "11. Intellectual Property",
+          "content": "CyberGuard and its associated trademarks, logos, and content are our property. You may not use our branding or content without written permission. Our software and algorithms are protected by copyright and trade secret laws."
+        },
+        "changes": {
+          "title": "12. Changes to Terms",
+          "content": "We reserve the right to modify these terms at any time. We will notify users of significant changes via email or through the platform. Continued use of the service after changes constitutes acceptance of the new terms."
+        },
+        "governingLaw": {
+          "title": "13. Governing Law",
+          "content": "These terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles. Any disputes shall be resolved through arbitration or in courts of competent jurisdiction."
+        },
+        "contact": {
+          "title": "14. Contact Information",
+          "intro": "For questions about these Terms of Service, please contact us at:",
+          "department": "Legal Department",
+          "email": "cypergaurd@gmail.com",
+          "address": "Office Address",
+          "company": "CyberGuard Security Inc.",
+          "location": "Cairo, Egypt",
+          "responseTime": "Response time: Legal inquiries typically answered within 2-3 business days"
+        }
+      },
+      "backToHome": "Back to Home"
+    }
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "scans": "Scans",
+    "breaches": "Breaches",
+    "reports": "Reports",
+    "settings": "Settings",
+    "admin": "Admin",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "companyName": "Company Name",
+    "domain": "Domain",
+    "emailDomains": "Email Domains",
+    "loginTitle": "Sign in to your account",
+    "registerTitle": "Create your account",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "loginButton": "Sign In",
+    "registerButton": "Create Account",
+    "forgetPassword": "forget password ?"
+  },
+  "dashboard": {
+    "title": "Security Dashboard",
+    "subtitle": "Real-time cybersecurity monitoring overview",
+    "riskScore": "Risk Score",
+    "riskCategory": "Risk Category",
+    "totalScans": "Total Scans",
+    "exposedCredentials": "Exposed Credentials",
+    "openPorts": "Open Ports",
+    "sslIssues": "SSL Issues",
+    "lastScan": "Last Scan",
+    "riskTrend": "Risk Score Trend",
+    "recentBreaches": "Recent Breaches",
+    "triggerScan": "Trigger Scan",
+    "generating": "Generating...",
+    "noData": "No data yet. Trigger your first scan.",
+    "scanTypes": "Select Scan Types",
+    "riskHistory": "Risk History",
+    "lastScans": "Last {count} scans",
+    "runScansToSeeHistory": "Run scans to see history",
+    "startScan": "Start Scan",
+    "noRecentBreaches": "No recent breaches detected",
+    "yourSystemsSecure": "Your systems are secure",
+    "errorLoadingDashboard": "Error Loading Dashboard",
+    "enterpriseGradeSecurity": "Enterprise Grade Security",
+    "realtimeMonitoring": "Real-time Monitoring",
+    "gdprCompliant": "GDPR Compliant",
+    "protection24": "24/7 Protection",
+    "noScansYet": "No scans yet",
+    "total": "total",
+    "selectScanType": "Select at least one scan type",
+    "pleaseLogin": "Please log in to start a scan",
+    "companyIdNotFound": "Company ID not found. Please contact support.",
+    "scanQueued": "Scan queued successfully! Results will appear shortly.",
+    "scanFailed": "Failed to trigger scan",
+    "scanTypesList": {
+      "portScan": "Port Scan",
+      "sslCheck": "SSL Check",
+      "subdomainEnum": "Subdomain Enumeration",
+      "breachCheck": "Breach Check",
+      "riskCalc": "Risk Calculation"
+    },
+    "table": {
+      "email": "Email",
+      "breach": "Breach",
+      "source": "Source",
+      "severity": "Severity",
+      "detected": "Detected"
+    }
+  },
+  "scans": {
+    "scanDetail": {
+      "backToScans": "Back to Scans",
+      "refresh": "Refresh",
+      "export": "Export",
+      "share": "Share",
+      "started": "Started:",
+      "completed": "Completed:",
+      "ports": "Ports",
+      "subdomains": "Subdomains",
+      "vulnerabilities": "Vulnerabilities",
+      "openPorts": "Open Ports",
+      "total": "total",
+      "noOpenPorts": "No open ports found",
+      "allPortsSecured": "All ports are secured",
+      "sslCertificate": "SSL Certificate",
+      "valid": "Valid",
+      "invalid": "Invalid",
+      "issuer": "Issuer",
+      "expiresIn": "Expires in",
+      "days": "days",
+      "subject": "Subject",
+      "validFrom": "Valid from",
+      "validUntil": "Valid until",
+      "weakCiphersDetected": "Weak Ciphers Detected:",
+      "sslCheckPending": "SSL check pending",
+      "subdomainsFound": "subdomain found",
+      "active": "active",
+      "noSubdomains": "No subdomains found",
+      "outdatedSoftware": "Outdated Software",
+      "current": "Current:",
+      "latest": "Latest:",
+      "noOutdatedSoftware": "No outdated software detected",
+      "allSystemsUpdated": "All systems are up to date",
+      "scanId": "Scan ID:",
+      "duration": "Duration:",
+      "seconds": "seconds",
+      "inProgress": "In progress",
+      "scanner": "Scanner:",
+      "comprehensiveScan": "Comprehensive Scan",
+      "realtimeResults": "Real-time Results",
+      "detailedAnalysis": "Detailed Analysis",
+      "scanNotFound": "Scan Not Found",
+      "scanNotFoundDesc": "The scan you're looking for doesn't exist or has been removed.",
+      "goBack": "Go Back"
+    },
+    "title": "Security Scans",
+    "subtitle": "View and manage security scans",
+    "newScan": "New Scan",
+    "status": "Status",
+    "domain": "Domain",
+    "startedAt": "Started",
+    "completedAt": "Completed",
+    "ports": "Open Ports",
+    "subdomains": "Subdomains",
+    "sensitivePaths": "Sensitive Paths",
+    "pending": "Pending",
+    "running": "Running",
+    "completed": "Completed",
+    "failed": "Failed",
+    "viewDetails": "Details",
+    "confirmDelete": "Are you sure you want to delete this scan? This action cannot be undone.",
+    "scanDeleted": "Scan deleted successfully!",
+    "deleteFailed": "Failed to delete scan",
+    "refreshed": "Scans refreshed successfully!",
+    "refreshing": "Refreshing...",
+    "refresh": "Refresh",
+    "noScansToExport": "No scans to export",
+    "exportSuccess": "{count} scans exported to CSV",
+    "exportFailed": "Failed to export scans",
+    "notStarted": "Not Started",
+    "inProgress": "In Progress",
+    "cancelled": "Cancelled",
+    "noScansTitle": "No scans yet",
+    "noScansDescription": "Trigger your first security scan from the dashboard to start monitoring your assets.",
+    "goToDashboard": "Go to Dashboard",
+    "totalScans": "Total Scans",
+    "runningScans": "Running",
+    "completedScans": "Completed",
+    "failedScans": "Failed",
+    "filterAll": "All",
+    "searchPlaceholder": "Search domains...",
+    "scanHistory": "Scan History",
+    "open": "open",
+    "found": "found",
+    "discovered": "discovered",
+    "actions": "Actions",
+    "showing": "Showing",
+    "to": "to",
+    "of": "of",
+    "scansCount": "scans",
+    "exporting": "Exporting...",
+    "exportCSV": "Export CSV",
+    "realtimeScanning": "Real-time Scanning",
+    "historicalData": "Historical Data",
+    "detailedReports": "Detailed Reports",
+    "export": {
+      "domain": "Domain Name",
+      "status": "Scan Status",
+      "portsCount": "Open Ports Count",
+      "subdomainsCount": "Subdomains Count",
+      "pathsCount": "Sensitive Paths Count",
+      "startedAt": "Start Date & Time",
+      "completedAt": "Completion Date & Time",
+      "exportDate": "Export Date",
+      "totalScans": "Total Scans",
+      "completedScans": "Completed Scans",
+      "pendingScans": "Pending Scans",
+      "failedScans": "Failed Scans"
+    }
+  },
+  "breaches": {
+    "title": "Credential Exposures",
+    "subtitle": "Exposed company credentials from breach databases",
+    "email": "Email",
+    "breach": "Breach",
+    "source": "Source",
+    "date": "Date",
+    "severity": "Severity",
+    "dataClasses": "Compromised Data",
+    "noBreaches": "No credential exposures detected. 🎉",
+    "filterAll": "All",
+    "filterBySeverity": "Filter by severity",
+    "total": "Total",
+    "critical": "Critical",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "noBreachesTitle": "No Breaches Found",
+    "noBreachesDescription": "Your company's credentials have not been found in any breach databases. Your systems are secure! 🎉",
+    "lastChecked": "Last checked",
+    "breachDatabase": "Breach Database",
+    "searchPlaceholder": "Search breaches...",
+    "actions": "Actions",
+    "allDataClasses": "All data classes",
+    "showing": "Showing",
+    "to": "to",
+    "of": "of",
+    "results": "results",
+    "exportReport": "Export Report",
+    "realtimeMonitoring": "Real-time Monitoring",
+    "recordsChecked": "10B+ Records Checked",
+    "updatedDaily": "Updated Daily"
+  },
+  "reports": {
+    "title": "Security Reports",
+    "subtitle": "Generated PDF reports",
+    "generate": "Generate Report",
+    "download": "Download",
+    "language": "Language",
+    "english": "English",
+    "arabic": "Arabic",
+    "generatedAt": "Generated",
+    "riskScore": "Risk Score",
+    "refresh": "Refresh",
+    "refreshed": "Reports refreshed!",
+    "generating": "Generating...",
+    "filterAll": "All",
+    "noReportsTitle": "No reports yet",
+    "noReportsDescription": "Generate your first security report to get detailed insights about your organization's security posture.",
+    "generateFirst": "Generate First Report",
+    "totalReports": "Total Reports",
+    "pdfReports": "PDF Reports",
+    "excelReports": "Excel Reports",
+    "wordReports": "Word Reports",
+    "sensitivePaths": "Sensitive Paths",
+    "moderate": "Moderate",
+    "critical": "Critical",
+    "high": "High",
+    "medium": "Medium",
+    "updated": "Updated",
+    "preview": "Preview",
+    "previewComingSoon": "Preview feature coming soon!",
+    "exportAll": "Export All Reports",
+    "confirmDelete": "Are you sure you want to delete this report?",
+    "generateSuccess": "Report generated successfully!",
+    "generateFailed": "Failed to generate report",
+    "downloadSuccess": "Report downloaded successfully!",
+    "downloadFailed": "Failed to download report",
+    "downloadPdfSuccess": "Report downloaded as PDF!",
+    "downloadExcelSuccess": "Report downloaded as Excel file!",
+    "downloadWordSuccess": "Report downloaded as Word document!",
+    "deleteSuccess": "Report deleted successfully!",
+    "deleteFailed": "Failed to delete report",
+    "exportSuccess": "Reports exported successfully!",
+    "exportFailed": "Failed to export reports",
+    "exportPdfSuccess": "Reports exported as PDF!",
+    "exportExcelSuccess": "Reports exported as Excel file!",
+    "exportWordSuccess": "Reports exported as Word document!",
+    "soc2Compliant": "SOC2 Compliant",
+    "multipleFormats": "Multiple Formats",
+    "realtimeData": "Real-time Data"
+  },
+  "risk": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "critical": "Critical",
+    "score": "Risk Score",
+    "findings": "Findings",
+    "recommendation": "Recommendation",
+    "affectedAsset": "Affected Asset"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "Manage users, trigger scans, and monitor system health",
+    "totalUsers": "Total Users",
+    "admins": "Admins",
+    "totalScans": "Total Scans",
+    "addTeamMember": "Add Team Member",
+    "addTeamMemberDesc": "Invite new users to your organization",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "userRole": "User (Limited Access)",
+    "adminRole": "Admin (Full Access)",
+    "creatingUser": "Creating User...",
+    "createUser": "Create User",
+    "userCreated": "User created successfully!",
+    "manualOperations": "Manual Operations",
+    "manualOperationsDesc": "Trigger security scans manually",
+    "fullSecurityScan": "Full Security Scan",
+    "fullScanDesc": "Triggers a comprehensive scan including:",
+    "runFullScan": "Run Full Security Scan",
+    "scanningInProgress": "Scanning in progress...",
+    "scanTriggered": "Full scan triggered for your company",
+    "lastScan": "Last scan",
+    "noScansYet": "No scans yet",
+    "systemOperational": "System operational",
+    "teamMembers": "Team Members",
+    "teamMembersDesc": "Manage users and permissions",
+    "searchUsers": "Search users...",
+    "role": "Role",
+    "user": "user",
+    "admin": "admin",
+    "joined": "Joined",
+    "status": "Status",
+    "active": "Active",
+    "actions": "Actions",
+    "noTeamMembers": "No team members found",
+    "addFirstMember": "Add your first team member to get started",
+    "systemStatus": "System Status",
+    "allSystemsOperational": "All Systems Operational",
+    "connecting": "Connecting...",
+    "lastSync": "Last sync",
+    "activeScans": "Active Scans",
+    "scanInProgress": "Scan in Progress",
+    "noActiveScans": "No Active Scans",
+    "securityScore": "Security Score",
+    "openPorts": "Open Ports",
+    "exposedCredentials": "Exposed Credentials",
+    "expiredSslCerts": "Expired SSL Certs",
+    "scanHistory": "Scan History",
+    "scanHistoryDesc": "Manage and delete scans",
+    "domain": "Domain",
+    "ports": "Ports",
+    "started": "Started",
+    "showing": "Showing",
+    "of": "of",
+    "scans": "scans",
+    "adminAccessOnly": "Admin Access Only",
+    "auditLogEnabled": "Audit Log Enabled",
+    "realtimeMonitoring": "Real-time Monitoring",
+    "passwordModal": {
+      "title": "User Created Successfully!",
+      "email": "Email:",
+      "tempPassword": "Temporary Password:",
+      "warning": "Please save this password. The user will need it to login for the first time.",
+      "done": "Done",
+      "copied": "Password copied to clipboard!"
+    },
+    "editModal": {
+      "title": "Edit User",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "saved": "User updated successfully!"
+    },
+    "confirmDeleteUser": "Are you sure you want to delete this user?",
+    "userDeleted": "User deleted successfully!",
+    "confirmDeleteScan": "Are you sure you want to delete this scan? This action cannot be undone.",
+    "scanDeleted": "Scan deleted successfully!"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your account, company, and preferences",
+    "saving": "Saving...",
+    "tabs": {
+      "company": "Company",
+      "profile": "Profile",
+      "notifications": "Notifications",
+      "schedule": "Auto Scan",
+      "security": "Security",
+      "appearance": "Appearance"
+    },
+    "company": {
+      "title": "Company Settings",
+      "description": "Manage your organization's information and monitored domains",
+      "name": "Company Name",
+      "namePlaceholder": "Acme Corporation",
+      "primaryDomain": "Primary Domain",
+      "locked": "Locked",
+      "domainCannotChange": "Domain cannot be changed after registration",
+      "emailDomains": "Monitored Email Domains",
+      "addDomain": "Add Domain",
+      "domainPlaceholder": "company.com",
+      "domainsDescription": "These domains will be checked against breach databases",
+      "saveSuccess": "Company settings saved!",
+      "saveFailed": "Failed to save",
+      "saveButton": "Save Company Settings"
+    },
+    "profile": {
+      "title": "Personal Information",
+      "description": "Update your name and email address",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "saveSuccess": "Profile updated!",
+      "saveButton": "Save Profile",
+      "role": "Role",
+      "changePassword": "Change Password",
+      "passwordDescription": "Use a strong password of at least 8 characters",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "passwordPlaceholder": "••••••••",
+      "weakPassword": "Weak password",
+      "mediumPassword": "Medium password",
+      "strongPassword": "Strong password ✓",
+      "passwordMismatch": "New passwords do not match",
+      "passwordTooShort": "Password must be at least 8 characters",
+      "passwordChanged": "Password changed successfully!",
+      "changePasswordButton": "Change Password"
+    },
+    "notifications": {
+      "emailTitle": "Email Notifications",
+      "emailDescription": "Configure which events trigger email alerts",
+      "notificationEmail": "Notification Email",
+      "emailPlaceholder": "alerts@company.com",
+      "newBreach": "New Credential Breach Detected",
+      "newBreachDesc": "Get notified immediately when a new breach is found",
+      "scanComplete": "Scan Completed",
+      "scanCompleteDesc": "Receive a summary after each security scan",
+      "highRisk": "High Risk Alert",
+      "highRiskDesc": "Alert when risk score exceeds 70",
+      "weeklyDigest": "Weekly Security Digest",
+      "weeklyDigestDesc": "Summary of all findings every Monday morning",
+      "inAppTitle": "In-App Notifications",
+      "inAppDescription": "Toast alerts shown inside the dashboard",
+      "showBreachAlerts": "Show Breach Alerts",
+      "showBreachAlertsDesc": "Pop-up notification when breach data is detected",
+      "showScanCompletion": "Show Scan Completion",
+      "showScanCompletionDesc": "Notification when a scan finishes",
+      "saveSuccess": "Notification preferences saved!",
+      "saveButton": "Save Notification Settings"
+    },
+    "schedule": {
+      "title": "Automatic Scan Schedule",
+      "description": "Configure when CyberGuard automatically scans your infrastructure",
+      "enableAutoScan": "Enable Auto Scanning",
+      "enableAutoScanDesc": "Runs scans automatically on your schedule",
+      "frequency": "Frequency",
+      "daily": "daily",
+      "weekly": "weekly",
+      "manual": "manual",
+      "scanTime": "Scan Time",
+      "dayOfWeek": "Day of Week",
+      "includeScanTypes": "Include Scan Types",
+      "nextScan": "Next scan:",
+      "everyDayAt": "Every day at",
+      "everyAt": "Every",
+      "at": "at",
+      "scanTypesSelected": "scan type(s) selected",
+      "saveSuccess": "Scan schedule saved!",
+      "saveButton": "Save Schedule",
+      "scanTypes": {
+        "portScan": "Port Scanning",
+        "sslCheck": "SSL Certificate Check",
+        "subdomainEnum": "Subdomain Enumeration",
+        "breachCheck": "Breach Detection",
+        "directoryScan": "Directory Scan",
+        "riskCalc": "Risk Calculation"
+      }
+    },
+    "security": {
+      "title": "Security Overview",
+      "description": "Review your account security status",
+      "twoFactor": "Two-Factor Authentication",
+      "twoFactorEnabled": "Enabled",
+      "twoFactorNotEnabled": "Not Enabled",
+      "twoFactorProtected": "Your account is protected",
+      "twoFactorEnhance": "Enhance your account security",
+      "jwtToken": "JWT Token",
+      "jwtActive": "Active (7 days)",
+      "jwtAutoRenewed": "Auto-renewed on login",
+      "passwordStrength": "Password Strength",
+      "lastChanged": "Last changed",
+      "rateLimiting": "Rate Limiting",
+      "accountLocked": "Account Locked",
+      "tooManyAttempts": "Too many failed login attempts",
+      "activeProtection": "10 auth attempts / 15 min",
+      "corsProtection": "CORS Protection",
+      "corsActive": "Active",
+      "corsWhitelist": "Whitelist-based",
+      "activeSessions": "Active Sessions",
+      "activeSessionsDesc": "Manage where you're logged in",
+      "current": "Current",
+      "active": "Active",
+      "browser": "Browser",
+      "revokeSessions": "Revoke All Other Sessions",
+      "sessionsRevoked": "All other sessions have been revoked!",
+      "apiAccess": "API Access",
+      "apiAccessDesc": "For integrations and automation",
+      "comingSoon": "Coming Soon",
+      "apiComingSoon": "API key management is coming in Phase 2 — Future-ready architecture is in place.",
+      "twoFactorEnabledSuccess": "2FA enabled successfully!",
+      "twoFactorDisabled": "2FA disabled"
+    },
+    "appearance": {
+      "title": "Appearance & Language",
+      "description": "Customize how CyberGuard looks and feels",
+      "theme": "Theme",
+      "darkMode": "Dark Mode",
+      "lightMode": "Light Mode",
+      "currentlyActive": "Currently active",
+      "language": "Language",
+      "ltr": "LTR",
+      "rtl": "RTL",
+      "about": "About",
+      "version": "Version",
+      "stack": "Stack",
+      "phase": "Phase"
+    },
+    "trustBadges": {
+      "enterpriseSecurity": "Enterprise Grade Security",
+      "realtimeUpdates": "Real-time Updates",
+      "instantSync": "Instant Sync"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "search": "Search",
+    "noResults": "No results found",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "arabic": "العربية",
+    "english": "English",
+    "page": "Page",
+    "of": "of"
+  }
+}

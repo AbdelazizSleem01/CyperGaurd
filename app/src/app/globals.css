@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: cyberdark --default, cyberlight;
+}
+
+@config "../../tailwind.config.js";
+
+/* ─── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --cyber-glow: 0 0 20px rgba(14, 165, 233, 0.3);
+  --card-border: rgba(148, 163, 184, 0.1);
+}
+
+/* ─── DaisyUI Custom Themes ─────────────────────────────────────────────────── */
+[data-theme="cyberdark"] {
+  --color-primary: oklch(0.72 0.17 210);
+  --color-primary-content: oklch(1 0 0);
+  --color-secondary: oklch(0.55 0.24 290);
+  --color-secondary-content: oklch(1 0 0);
+  --color-accent: oklch(0.75 0.14 195);
+  --color-accent-content: oklch(1 0 0);
+  --color-neutral: oklch(0.3 0.03 250);
+  --color-neutral-content: oklch(0.85 0.01 250);
+  --color-base-100: oklch(0.15 0.02 250);
+  --color-base-200: oklch(0.22 0.03 250);
+  --color-base-300: oklch(0.3 0.03 250);
+  --color-base-content: oklch(0.9 0.01 250);
+  --color-info: oklch(0.75 0.15 210);
+  --color-success: oklch(0.7 0.19 145);
+  --color-warning: oklch(0.75 0.15 70);
+  --color-error: oklch(0.65 0.2 25);
+  --color-input-border: oklch(100% 0.00011 271.152 / 0.075);
+}
+
+[data-theme="cyberlight"] {
+  --color-primary: oklch(0.55 0.17 210);
+  --color-primary-content: oklch(1 0 0);
+  --color-secondary: oklch(0.55 0.24 290);
+  --color-secondary-content: oklch(1 0 0);
+  --color-accent: oklch(0.6 0.13 195);
+  --color-accent-content: oklch(1 0 0);
+  --color-neutral: oklch(0.35 0.03 250);
+  --color-neutral-content: oklch(0.98 0 0);
+  --color-base-100: oklch(0.98 0.01 250);
+  --color-base-200: oklch(0.94 0.01 250);
+  --color-base-300: oklch(0.88 0.01 250);
+  --color-base-content: oklch(0.2 0.03 250);
+  --color-info: oklch(0.65 0.15 210);
+  --color-success: oklch(0.6 0.17 145);
+  --color-warning: oklch(0.7 0.15 70);
+  --color-error: oklch(0.6 0.2 25);
+  --color-input-border: oklch(0% 0 0 / 0.164);
+}
+
+/* ─── RTL Support ────────────────────────────────────────────────────────────── */
+[dir='rtl'] .flip-rtl {
+  transform: scaleX(-1);
+}
+
+/* ─── Custom Scrollbar ────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* ─── Cyber Glow Effects ─────────────────────────────────────────────────────── */
+.cyber-glow {
+  box-shadow: var(--cyber-glow);
+}
+
+.cyber-border {
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+/* ─── Risk Score Ring ─────────────────────────────────────────────────────────── */
+.risk-ring {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* ─── Scan Animation ─────────────────────────────────────────────────────────── */
+@keyframes scanPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.scan-active {
+  animation: scanPulse 1.5s ease-in-out infinite;
+}
+
+/* ─── Status Badges ───────────────────────────────────────────────────────────── */
+.status-pending {
+  @apply badge badge-warning badge-sm;
+}
+
+.status-running {
+  @apply badge badge-info badge-sm;
+}
+
+.status-completed {
+  @apply badge badge-success badge-sm;
+}
+
+.status-failed {
+  @apply badge badge-error badge-sm;
+}
+
+/* ─── Card Hover ─────────────────────────────────────────────────────────────── */
+.cyber-card {
+  @apply card bg-base-200 border border-base-300 transition-all duration-200;
+}
+
+.cyber-card:hover {
+  @apply border-primary/30;
+  box-shadow: 0 4px 24px rgba(14, 165, 233, 0.08);
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────────── */
+[dir='rtl'] {
+  font-family: var(--font-cairo), sans-serif;
+  letter-spacing: 0;
+}
+
+/* ─── Table Styles ────────────────────────────────────────────────────────────── */
+.data-table {
+  @apply table table-sm w-full;
+}
+
+.data-table th {
+  @apply text-base-content/60 uppercase text-xs tracking-wider;
+}
+
+/* ─── Loading Shimmer ─────────────────────────────────────────────────────────── */
+.shimmer {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+button,
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+select {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.input {
+  border-radius: 5px;
+  border: 1px solid var(--color-input-border);
+}
+
+.badge {
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+
+/* ─── Toggle Switch - Circular ─────────────────────────────────────────────── */
+.toggle {
+  border-radius: 9999px !important;
+}
+
+.toggle::before {
+  border-radius: 9999px !important;
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+}
+
+.toggle-sm::before {
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+}
+
+.toggle-md::before {
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+}
+
+.toggle-lg::before {
+  width: 1.4rem !important;
+  height: 1.4rem !important;
+}
+
+/* Checked state - move the circle */
+.toggle:checked::before {
+  transform: translateX(100%) !important;
+}
+
+/* Ensure the track is rounded */
+.toggle {
+  height: 1.5rem !important;
+  min-height: 1.5rem !important;
+}
+
+.toggle-sm {
+  height: 1.25rem !important;
+  min-height: 1.25rem !important;
+  width: 2rem !important;
+}
+
+.toggle-md {
+  height: 1.5rem !important;
+  min-height: 1.5rem !important;
+  width: 2.5rem !important;
+}
+
+.toggle-lg {
+  height: 2rem !important;
+  min-height: 2rem !important;
+  width: 3rem !important;
+}

@@ -1,0 +1,15 @@
+node_modules/
+.next/
+dist/
+build/
+*.env
+!.env.example
+reports/
+*.log
+.DS_Store
+coverage/
+.turbo/
+*.tsbuildinfo
+
+# Security Tooling Data (Optional/Heavy)
+SecLists/
