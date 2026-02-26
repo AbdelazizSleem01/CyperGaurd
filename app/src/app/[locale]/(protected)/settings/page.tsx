@@ -63,6 +63,7 @@ interface ScheduleSettings {
   scanTime: string;
   scanDay: string;
   scanTypes: string[];
+  timezone: string;
 }
 
 interface SettingsData {
@@ -212,6 +213,7 @@ export default function SettingsPage() {
     scanTime: '02:00',
     scanDay: 'monday',
     scanTypes: ['port-scan', 'ssl-check', 'breach-check', 'risk-calc'],
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC',
   });
 
   // ── Security State ─────────────────────────────────────────────────────────
@@ -342,7 +344,16 @@ export default function SettingsPage() {
   const saveSchedule = async () => {
     setSaving(true);
     try {
-      await put('/settings/schedule', schedule);
+      // Normalize scanTime to HH:MM format before saving
+      const parts = schedule.scanTime.split(':');
+      const normalizedTime = `${(parts[0] || '0').padStart(2, '0')}:${(parts[1] || '0').padStart(2, '0')}`;
+      const payload = {
+        ...schedule,
+        scanTime: normalizedTime,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC',
+      };
+      await put('/settings/schedule', payload);
+      setSchedule(payload);
       toast.success(t('schedule.saveSuccess'));
     } catch (err: any) {
       toast.error(err.message || t('company.saveFailed'));

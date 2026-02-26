@@ -18,6 +18,7 @@ export interface IScheduleSettings {
   scanTime: string;
   scanDay: string;
   scanTypes: string[];
+  timezone: string;
 }
 
 export interface ISettings extends Document {
@@ -45,6 +46,7 @@ const ScheduleSettingsSchema = new Schema<IScheduleSettings>({
   scanTime: { type: String, default: '02:00' },
   scanDay: { type: String, default: 'monday' },
   scanTypes: [{ type: String, default: ['port-scan', 'ssl-check', 'breach-check', 'risk-calc'] }],
+  timezone: { type: String, default: 'UTC' },
 }, { _id: false });
 
 const SettingsSchema = new Schema<ISettings>(

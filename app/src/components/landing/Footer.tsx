@@ -49,13 +49,13 @@ export default function Footer() {
               {t('description')}
             </p>
             <div className="flex items-center gap-3 mt-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-base-content/40 hover:text-primary transition-colors duration-200">
+              <a href="https://github.com/AbdelazizSleem01" target="_blank" rel="noopener noreferrer" className="text-base-content/40 hover:text-primary transition-colors duration-200">
                 <RiGithubLine size={18} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-base-content/40 hover:text-primary transition-colors duration-200">
+              <a href="https://abdelaziz-sleem.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-base-content/40 hover:text-primary transition-colors duration-200">
                 <RiTwitterLine size={18} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-base-content/40 hover:text-primary transition-colors duration-200">
+              <a href="https://abdelaziz-sleem.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-base-content/40 hover:text-primary transition-colors duration-200">
                 <RiLinkedinLine size={18} />
               </a>
             </div>

@@ -35,7 +35,6 @@ export class IntelligenceOrchestrator {
     async getSmartIntelligence(domain: string): Promise<IntelligenceData> {
         const cacheKey = `intel-cache:${domain}`;
 
-        // 1. Check Cache
         if (this.redis) {
             try {
                 const cached = await this.redis.get(cacheKey);
@@ -51,7 +50,6 @@ export class IntelligenceOrchestrator {
         const results: IntelligenceData[] = [];
         const errors: any[] = [];
 
-        // Attempt VT and Shodan in parallel
         const promises = this.providers.map(async (provider) => {
             try {
                 return await this.retryOperation(() => provider.getDomainIntelligence(domain));
@@ -80,16 +78,13 @@ export class IntelligenceOrchestrator {
 
         const merged = this.mergeResults(results);
         let finalResult = merged;
-        // If both failed, quota exceeded, OR we have no ports (might mean Shodan failed), use fallback
         if (!anySuccess || allQuotaExceeded || merged.ports.length === 0) {
             logger.info('External providers failed, quota exceeded, or returned no ports. Attempting local fallback.');
             const fallbackResult = await this.fallbackProvider.getDomainIntelligence(domain);
 
-            // Merge fallback result with already collected data
             finalResult = this.mergeResults([...results, fallbackResult]);
         }
 
-        // 2. Save to Cache (24 hours)
         if (this.redis) {
             try {
                 await this.redis.set(cacheKey, JSON.stringify(finalResult), 'EX', 86400);

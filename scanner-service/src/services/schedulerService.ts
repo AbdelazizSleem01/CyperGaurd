@@ -49,6 +49,61 @@ async function runScanForCompany(companyId: string, domain: string, scanTypes: s
 }
 
 // ─── Check and Run Scheduled Scans ────────────────────────────────────────────
+// ─── Helper: get current time in a specific timezone ──────────────────────────
+function getCurrentTimeInTimezone(timezone: string): { time: string; day: string; dateString: string } {
+  try {
+    const now = new Date();
+    // Use Intl.DateTimeFormat to get time in the user's timezone
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: timezone,
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    });
+    const dayFormatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: timezone,
+      weekday: 'long',
+    });
+    const dateFormatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: timezone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
+
+    const parts = formatter.formatToParts(now);
+    const hour = (parts.find(p => p.type === 'hour')?.value || '00').padStart(2, '0');
+    const minute = (parts.find(p => p.type === 'minute')?.value || '00').padStart(2, '0');
+    // Some locales return "24" for midnight, normalize to "00"
+    const normalizedHour = hour === '24' ? '00' : hour;
+
+    return {
+      time: `${normalizedHour}:${minute}`,
+      day: dayFormatter.format(now).toLowerCase(),
+      dateString: dateFormatter.format(now),
+    };
+  } catch {
+    // Fallback to UTC if timezone is invalid
+    const now = new Date();
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    return {
+      time: `${now.getUTCHours().toString().padStart(2, '0')}:${now.getUTCMinutes().toString().padStart(2, '0')}`,
+      day: days[now.getUTCDay()],
+      dateString: now.toUTCString(),
+    };
+  }
+}
+
+// ─── Helper: normalize time to HH:MM format ──────────────────────────────────
+function normalizeTime(time: string): string {
+  if (!time) return '00:00';
+  const parts = time.split(':');
+  const hour = (parts[0] || '0').padStart(2, '0');
+  const minute = (parts[1] || '0').padStart(2, '0');
+  return `${hour}:${minute}`;
+}
+
+// ─── Check and Run Scheduled Scans ────────────────────────────────────────────
 async function checkScheduledScans(): Promise<void> {
   try {
     const isDbConnected = mongoose.connection.readyState === 1;
@@ -56,15 +111,7 @@ async function checkScheduledScans(): Promise<void> {
       await connectToDatabase();
     }
 
-    const now = new Date();
-    const currentHour = now.getHours().toString().padStart(2, '0');
-    const currentMinute = now.getMinutes().toString().padStart(2, '0');
-    const currentTime = `${currentHour}:${currentMinute}`;
-
-    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    const currentDay = days[now.getDay()];
-
-    logger.debug('Checking scheduled scans', { currentTime, currentDay });
+    logger.debug('Checking scheduled scans...');
 
     const settingsWithAutoScan = await Settings.find({
       'schedule.autoScanEnabled': true,
@@ -73,27 +120,64 @@ async function checkScheduledScans(): Promise<void> {
     for (const settings of settingsWithAutoScan) {
       const { schedule } = settings;
 
+      // Get current time in the user's timezone (default to UTC if not set)
+      const userTimezone = schedule.timezone || 'UTC';
+      const { time: currentTime, day: currentDay, dateString: todayString } = getCurrentTimeInTimezone(userTimezone);
+
+      // Normalize stored scan time to ensure HH:MM format
+      const normalizedScanTime = normalizeTime(schedule.scanTime);
+
+      logger.debug('Comparing scan schedule', {
+        companyId: settings.companyId,
+        userTimezone,
+        currentTime,
+        scanTime: normalizedScanTime,
+        currentDay,
+        scanDay: schedule.scanDay,
+        frequency: schedule.frequency,
+      });
+
       let shouldRun = false;
 
-      if (schedule.frequency === 'daily' && schedule.scanTime === currentTime) {
+      if (schedule.frequency === 'daily' && normalizedScanTime === currentTime) {
         shouldRun = true;
       } else if (schedule.frequency === 'weekly' &&
         schedule.scanDay === currentDay &&
-        schedule.scanTime === currentTime) {
+        normalizedScanTime === currentTime) {
         shouldRun = true;
       }
 
-      const today = now.toDateString();
+      // Check if already ran today (using the user's timezone date)
       const lastAutoScanAt = settings.lastAutoScanAt;
-      const lastRunDate = lastAutoScanAt?.toDateString();
+      let alreadyRanToday = false;
+      if (lastAutoScanAt) {
+        const lastRunInUserTz = getCurrentTimeInTimezone(userTimezone);
+        // Compare using the timezone-aware date string
+        try {
+          const lastRunFormatter = new Intl.DateTimeFormat('en-US', {
+            timeZone: userTimezone,
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          });
+          const lastRunDateString = lastRunFormatter.format(lastAutoScanAt);
+          alreadyRanToday = lastRunDateString === todayString;
+        } catch {
+          alreadyRanToday = lastAutoScanAt.toDateString() === new Date().toDateString();
+        }
+      }
 
       if (shouldRun) {
-        if (lastRunDate === today) {
+        if (alreadyRanToday) {
           logger.debug(`Scan for company ${settings.companyId} already run today`);
         } else {
           const company = await Company.findById(settings.companyId);
           if (company && company.domain) {
-            logger.info(`Triggering auto-scan for ${company.domain}`, { companyId: settings.companyId });
+            logger.info(`Triggering auto-scan for ${company.domain}`, {
+              companyId: settings.companyId,
+              timezone: userTimezone,
+              scheduledTime: normalizedScanTime,
+            });
             await runScanForCompany(
               settings.companyId.toString(),
               company.domain,
@@ -101,7 +185,7 @@ async function checkScheduledScans(): Promise<void> {
             );
 
             await Settings.findByIdAndUpdate(settings._id, {
-              lastAutoScanAt: now
+              lastAutoScanAt: new Date()
             });
           }
         }

@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
             </p>
             
             <p style="color: #666; line-height: 1.6;">
-              For urgent matters, please call us at +1 (234) 567-890.
+              For urgent matters, please call us at +20 127 076 3432.
             </p>
             
             <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
