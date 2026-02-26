@@ -52,7 +52,7 @@ graph TD
 
 | Layer | Technologies |
 | :--- | :--- |
-| **Frontend** | Next.js 14, TypeScript, Tailwind CSS, DaisyUI, Recharts |
+| **Frontend** | Next.js 16, TypeScript, Tailwind CSS, DaisyUI, Recharts |
 | **Backend** | Node.js, Express, TypeScript, BullMQ |
 | **Database** | MongoDB (Mongoose), Redis (Queue/Cache) |
 | **Reports** | PDFKit (PDF), ExcelJS (Excel), docx (Word) |
