@@ -40,7 +40,7 @@ app.use(helmet());
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   'http://localhost:3000',
-  'https://cyber-gaurd-v1.vercel.app'
+  'https://cyb-gau.vercel.app'
 ].filter(Boolean) as string[];
 
 app.use(cors({
