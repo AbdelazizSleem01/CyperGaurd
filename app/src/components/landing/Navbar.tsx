@@ -117,6 +117,7 @@ export default function Navbar() {
                 fill
                 className="object-contain group-hover:scale-110 transition-transform duration-500"
                 unoptimized
+                priority
               />
             </div>
             <div className="relative overflow-hidden">

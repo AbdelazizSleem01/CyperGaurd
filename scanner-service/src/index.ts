@@ -28,17 +28,35 @@ import { authenticateToken } from './middleware/auth';
 import { initializeScheduler } from './services/schedulerService';
 
 const app = express();
+export default app;
+
 const PORT = process.env.PORT || 4000;
 
 // ─── Global Middleware ────────────────────────────────────────────────────────
 app.use(helmet());
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:3000', credentials: true }));
+
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:3000',
+  'https://cyber-gaurd-v1.vercel.app'
+].filter(Boolean) as string[];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json({ limit: '10mb' }));
 app.use(morgan('combined'));
 
 // ─── Rate Limiting ────────────────────────────────────────────────────────────
 const globalLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, 
+  windowMs: 15 * 60 * 1000,
   max: 200,
   standardHeaders: true,
   legacyHeaders: false,
@@ -77,7 +95,9 @@ async function bootstrap() {
   });
 }
 
-bootstrap().catch((err) => {
-  logger.error('Failed to start scanner service', { error: String(err) });
-  process.exit(1);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  bootstrap().catch((err) => {
+    logger.error('Failed to start scanner service', { error: String(err) });
+    process.exit(1);
+  });
+}
