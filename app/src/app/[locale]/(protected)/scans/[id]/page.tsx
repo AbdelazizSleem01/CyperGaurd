@@ -23,7 +23,7 @@ import {
   RiArrowRightLine
 } from 'react-icons/ri';
 import Link from 'next/link';
-import { formatDate } from '@shared/utils';
+import { formatDate, normalizeDomain } from '@shared/utils';
 import { useTranslations, useLocale } from 'next-intl';
 
 export default function ScanDetailPage() {
@@ -172,7 +172,7 @@ export default function ScanDetailPage() {
             <div className="flex items-start justify-between">
               <div>
                 <h1 className="text-3xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent font-mono">
-                  {scan.domain}
+                  {normalizeDomain(scan.domain)}
                 </h1>
                 <div className="flex items-center gap-4 mt-2">
                   <div className="flex items-center gap-2">
@@ -204,7 +204,7 @@ export default function ScanDetailPage() {
                 </div>
                 <div className="px-3 py-2 bg-base-100/50 backdrop-blur-sm rounded-xl border border-base-300/50 text-center">
                   <p className="text-xs text-base-content/40">{t('vulnerabilities')}</p>
-                  <p className="text-lg font-bold text-error">{scan.outdatedSoftware?.length || 0}</p>
+                  <p className="text-lg font-bold text-error">{(scan.outdatedSoftware?.length || 0) + (scan.vulnerabilities?.length || 0)}</p>
                 </div>
               </div>
             </div>
@@ -252,6 +252,9 @@ export default function ScanDetailPage() {
                           <span className="text-sm text-base-content/80 capitalize">{p.service}</span>
                           {p.product && (
                             <span className="text-xs text-base-content/40">{p.product}</span>
+                          )}
+                          {p.banner && (
+                            <span className="text-xs text-base-content/30 mt-0.5 truncate" title={p.banner}>{p.banner}</span>
                           )}
                         </div>
                       </div>
@@ -448,6 +451,51 @@ export default function ScanDetailPage() {
               )}
             </div>
           </div>
+
+          {/* Vulnerabilities Card (from intelligence) */}
+          {scan.vulnerabilities && scan.vulnerabilities.length > 0 && (
+            <div className="relative group overflow-hidden bg-base-100/80 backdrop-blur-sm rounded-2xl shadow-xl border border-base-300/50 transition-all duration-300 hover:shadow-2xl hover:border-error/30">
+              <div className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-error to-red-500" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-linear-to-br from-error to-red-500" />
+
+              <div className="relative p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="font-semibold text-base-content flex items-center gap-2">
+                    <RiInformationLine className="text-error" size={20} />
+                    {t('externalVulnerabilities')}
+                  </h2>
+                  <span className="badge badge-error badge-sm">{scan.vulnerabilities.length} {t('found')}</span>
+                </div>
+                <div className="space-y-2 max-h-80 overflow-y-auto custom-scrollbar pr-2">
+                  {scan.vulnerabilities.map((v, idx) => (
+                    <div key={idx} className="p-3 bg-base-200/30 rounded-xl hover:bg-base-200/50 transition-all duration-200 animate-slide-in" style={{ animationDelay: `${idx * 50}ms` }}>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium text-base-content/90">{v.title}</span>
+                        <SeverityBadge severity={v.severity as any} />
+                      </div>
+                      <p className="text-xs text-base-content/70">{v.description}</p>
+                      {v.recommendation && (
+                        <p className="text-xs text-warning/80 mt-2 p-2 bg-warning/5 rounded-lg">
+                          {v.recommendation}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {scan.intelExtras && Object.keys(scan.intelExtras).length > 0 && (
+            <div className="relative mt-6 overflow-hidden bg-base-100/80 backdrop-blur-sm rounded-2xl shadow-xl border border-base-300/50 p-6">
+              <h3 className="text-base font-semibold mb-2">{t('intelExtras')}</h3>
+              <pre className="text-xs overflow-x-auto max-h-40 bg-base-200/30 p-2 rounded">
+                {JSON.stringify(scan.intelExtras, null, 2)}
+              </pre>
+            </div>
+          )}
+
+          {/* end results grid */}
         </div>
 
         {/* Scan Metadata */}

@@ -1,6 +1,7 @@
 'use strict';
 
 import { ScanResult } from '../../../database/models/ScanResult';
+import { normalizeDomain } from '../../../shared/utils';
 import { scanPorts } from './portScanService';
 import { checkSsl } from './sslService';
 import { enumerateSubdomains } from './subdomainService';
@@ -11,7 +12,8 @@ import { IntelligenceOrchestrator } from './intelligence/IntelligenceOrchestrato
 
 export async function executeFullScan(scanId: string, companyId: string, domain: string, scanTypes: string[]): Promise<void> {
     try {
-        logger.info('Executing real-time security scan', { scanId, domain, scanTypes });
+        const cleanDomain = normalizeDomain(domain);
+        logger.info('Executing real-time security scan', { scanId, domain: cleanDomain, scanTypes });
 
         await ScanResult.findByIdAndUpdate(scanId, { status: 'running' });
 
@@ -20,6 +22,8 @@ export async function executeFullScan(scanId: string, companyId: string, domain:
             ssl: null,
             subdomains: [],
             discoveredPaths: [],
+            vulnerabilities: [],
+            intelExtras: {},
             completedAt: new Date(),
         };
 
@@ -37,27 +41,37 @@ export async function executeFullScan(scanId: string, companyId: string, domain:
 
         // 2. Map Results back to specific scan types
         if (scanTypes.includes('port-scan')) {
-            results.ports = intelData ? intelData.ports : await scanPorts(domain);
+            results.ports = intelData ? intelData.ports : await scanPorts(cleanDomain);
         }
 
         if (scanTypes.includes('ssl-check')) {
             try {
-                results.ssl = await checkSsl(domain);
+                results.ssl = await checkSsl(cleanDomain);
             } catch (err) {
-                logger.error('SSL check failed', { domain, error: String(err) });
+                logger.error('SSL check failed', { domain: cleanDomain, error: String(err) });
             }
         }
 
         if (scanTypes.includes('subdomain-enum') || scanTypes.includes('combined')) {
-            results.subdomains = intelData ? intelData.subdomains : await enumerateSubdomains(domain);
+            results.subdomains = intelData ? intelData.subdomains : await enumerateSubdomains(cleanDomain);
         }
 
         // 4. Directory Discovery (Always manual as it requires active probing)
+
+        // if intelligence data included any vulnerabilities or extra information, keep it
+        if (intelData) {
+            if (intelData.vulnerabilities) {
+                results.vulnerabilities = intelData.vulnerabilities;
+            }
+            if (intelData.extra) {
+                results.intelExtras = intelData.extra;
+            }
+        }
         if (scanTypes.includes('directory-scan') || scanTypes.includes('combined')) {
             try {
-                results.discoveredPaths = await scanDirectories(domain);
+                results.discoveredPaths = await scanDirectories(cleanDomain);
             } catch (err) {
-                logger.error('Directory discovery failed', { domain, error: String(err) });
+                logger.error('Directory discovery failed', { domain: cleanDomain, error: String(err) });
             }
         }
 

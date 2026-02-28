@@ -6,7 +6,7 @@ import { Settings } from '../../../database/models/Settings';
 import { Company } from '../../../database/models/Company';
 import { ScanResult } from '../../../database/models/ScanResult';
 import { connectToDatabase } from '../../../database/connection';
-import { logger } from '../../../shared/utils';
+import { logger, normalizeDomain } from '../../../shared/utils';
 import { sendScanCompleteEmail, sendBreachAlertEmail } from './emailService';
 
 import {
@@ -19,11 +19,12 @@ import { executeFullScan } from './scannerEngine';
 // ─── Run Scan for Company ─────────────────────────────────────────────────────
 async function runScanForCompany(companyId: string, domain: string, scanTypes: string[]): Promise<string | null> {
   try {
-    logger.info('Starting automated scheduled scan', { companyId, domain, scanTypes });
+    const cleanDomain = normalizeDomain(domain);
+    logger.info('Starting automated scheduled scan', { companyId, domain: cleanDomain, scanTypes });
 
     const scanRecord = await ScanResult.create({
       companyId,
-      domain,
+      domain: cleanDomain,
       status: 'pending',
       ports: [],
       ssl: null,
@@ -37,7 +38,7 @@ async function runScanForCompany(companyId: string, domain: string, scanTypes: s
     await executeFullScan(
       scanRecord._id.toString(),
       companyId,
-      domain,
+      cleanDomain,
       scanTypes
     );
 

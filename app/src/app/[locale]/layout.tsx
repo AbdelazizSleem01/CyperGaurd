@@ -38,6 +38,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ],
     },
     manifest: '/site.webmanifest',
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
+
     openGraph: {
       type: 'website',
       locale: locale === 'ar' ? 'ar_SA' : 'en_US',

@@ -125,6 +125,21 @@ export function buildRiskAssessment(input: AssessmentInput): Omit<RiskAssessment
     });
   }
 
+  // ─── Additional Vulnerabilities Provided by Intelligence ────────────────
+  if (input.scanResult.vulnerabilities) {
+    for (const vuln of input.scanResult.vulnerabilities) {
+      findings.push({
+        id: uuidv4(),
+        category: 'External Vulnerability',
+        title: vuln.title,
+        description: vuln.description,
+        severity: vuln.severity as VulnerabilitySeverity,
+        recommendation: vuln.recommendation || '',
+        affectedAsset: input.scanResult.domain,
+      });
+    }
+  }
+
   const score = calculateRiskScore(findings);
   const category = getRiskCategory(score);
 

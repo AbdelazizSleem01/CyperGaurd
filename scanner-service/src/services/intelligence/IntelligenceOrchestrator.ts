@@ -112,7 +112,8 @@ export class IntelligenceOrchestrator {
     private mergeResults(dataList: IntelligenceData[]): IntelligenceData {
         const portsMap = new Map<number, PortResult>();
         const subdomainsMap = new Map<string, SubdomainResult>();
-        let extraMerged = {};
+        let extraMerged: Record<string, any> = {};
+        const vulnList: any[] = [];
 
         for (const data of dataList) {
             data.ports.forEach(p => {
@@ -126,12 +127,16 @@ export class IntelligenceOrchestrator {
                     subdomainsMap.set(key, s);
                 }
             });
+            if (data.vulnerabilities && data.vulnerabilities.length) {
+                vulnList.push(...data.vulnerabilities);
+            }
             extraMerged = { ...extraMerged, ...data.extra };
         }
 
         return {
             ports: Array.from(portsMap.values()),
             subdomains: Array.from(subdomainsMap.values()),
+            vulnerabilities: vulnList,
             extra: extraMerged
         };
     }

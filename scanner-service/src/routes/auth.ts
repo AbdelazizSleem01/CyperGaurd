@@ -10,7 +10,7 @@ import { Company } from '../../../database/models/Company';
 import { connectToDatabase } from '../../../database/connection';
 import { AppError } from '../middleware/errorHandler';
 import type { AuthPayload } from '../../../shared/types';
-import { logger } from '../../../shared/utils';
+import { logger, normalizeDomain } from '../../../shared/utils';
 
 export const authRouter = Router();
 
@@ -36,7 +36,10 @@ authRouter.post(
 
     await connectToDatabase();
 
-    const existingCompany = await Company.findOne({ domain: domain.toLowerCase() });
+    // make sure we store only hostname (no http/https or trailing slash)
+    const normalizedDomain = normalizeDomain(domain);
+
+    const existingCompany = await Company.findOne({ domain: normalizedDomain });
     if (existingCompany) {
       throw new AppError('نطاق الشركة هذا مسجل بالفعل، يرجى استخدام نطاق آخر أو تسجيل الدخول (This company domain is already registered)', 409, true);
     }
@@ -48,7 +51,7 @@ authRouter.post(
 
     const company = await Company.create({
       name: companyName,
-      domain: domain.toLowerCase(),
+      domain: normalizedDomain,
       emailDomains: emailDomains.map((d: string) => d.toLowerCase()),
     });
 

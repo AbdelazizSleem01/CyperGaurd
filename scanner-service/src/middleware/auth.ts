@@ -38,3 +38,11 @@ export function requireRole(...roles: UserRole[]) {
     next();
   };
 }
+
+export function requireSuperAdmin(req: Request, res: Response, next: NextFunction): void {
+  if (!req.user || req.user.role !== 'super-admin') {
+    res.status(403).json({ success: false, error: 'Super-admin access required' });
+    return;
+  }
+  next();
+}

@@ -9,6 +9,8 @@ export interface IScanResult extends Document {
     state: 'open' | 'closed' | 'filtered';
     service: string;
     version?: string;
+    product?: string;        // service banner/product information
+    banner?: string;         // raw banner or HTTP server header
   }[];
   ssl: {
     domain: string;
@@ -21,18 +23,28 @@ export interface IScanResult extends Document {
     weakCiphers: string[];
     isValid: boolean;
   } | null;
-  subdomains: { subdomain: string; ip?: string; status: string }[];
+  subdomains: { subdomain: string; ip?: string; status: string; ports?: number[] }[];
   outdatedSoftware: {
     name: string;
     currentVersion: string;
     latestVersion: string;
     severity: string;
+    recommendation?: string;
   }[];
   discoveredPaths: {
     path: string;
     status: number;
     type: string;
   }[];
+  // new advanced fields added to capture richer intelligence
+  vulnerabilities: {
+    title: string;
+    description: string;
+    severity: string;
+    recommendation?: string;
+    source?: string;
+  }[];
+  intelExtras: Record<string, any>;
   startedAt: Date;
   completedAt?: Date;
   error?: string;
@@ -48,6 +60,8 @@ const ScanResultSchema = new Schema<IScanResult>({
       state: String,
       service: String,
       version: String,
+      product: String,
+      banner: String,
     },
   ],
   ssl: {
@@ -66,6 +80,7 @@ const ScanResultSchema = new Schema<IScanResult>({
       subdomain: String,
       ip: String,
       status: String,
+      ports: [Number],
     },
   ],
   outdatedSoftware: [
@@ -74,6 +89,7 @@ const ScanResultSchema = new Schema<IScanResult>({
       currentVersion: String,
       latestVersion: String,
       severity: String,
+      recommendation: String,
     },
   ],
   discoveredPaths: [
@@ -86,6 +102,17 @@ const ScanResultSchema = new Schema<IScanResult>({
   startedAt: { type: Date, default: Date.now },
   completedAt: { type: Date },
   error: { type: String },
+  // advanced additions
+  vulnerabilities: [
+    {
+      title: String,
+      description: String,
+      severity: String,
+      recommendation: String,
+      source: String,
+    },
+  ],
+  intelExtras: { type: Schema.Types.Mixed },
 });
 
 ScanResultSchema.index({ companyId: 1, startedAt: -1 });

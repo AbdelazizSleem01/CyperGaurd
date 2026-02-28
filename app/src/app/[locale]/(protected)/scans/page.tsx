@@ -82,6 +82,7 @@ export default function ScansPage() {
         t('export.portsCount'),
         t('export.subdomainsCount'),
         t('export.pathsCount'),
+        t('export.vulnCount'),
         t('export.startedAt'),
         t('export.completedAt')
       ];
@@ -92,6 +93,7 @@ export default function ScansPage() {
         scan.ports?.length?.toString() || '0',
         scan.subdomains?.length?.toString() || '0',
         scan.discoveredPaths?.length?.toString() || '0',
+        ((scan.outdatedSoftware?.length || 0) + (scan.vulnerabilities?.length || 0)).toString(),
         scan.startedAt ? new Date(scan.startedAt).toLocaleString('en-US', {
           year: 'numeric',
           month: '2-digit',

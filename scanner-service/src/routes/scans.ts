@@ -6,7 +6,7 @@ import { connectToDatabase } from '../../../database/connection';
 import { AppError } from '../middleware/errorHandler';
 import { requireRole } from '../middleware/auth';
 import { scanQueue } from '../queues/scanQueue';
-import { logger } from '../../../shared/utils';
+import { logger, normalizeDomain } from '../../../shared/utils';
 import { notifyScanComplete } from '../services/notificationService';
 
 import { executeFullScan } from '../services/scannerEngine';
@@ -34,15 +34,19 @@ scansRouter.post(
     const company = await Company.findById(companyId);
     if (!company) throw new AppError('Company not found', 404, true);
 
+    const cleanDomain = normalizeDomain(company.domain);
+
     const scanRecord = await ScanResult.create({
       companyId,
-      domain: company.domain,
+      domain: cleanDomain,
       status: 'pending',
       ports: [],
       ssl: null,
       subdomains: [],
       outdatedSoftware: [],
       discoveredPaths: [],
+      vulnerabilities: [],
+      intelExtras: {},
       startedAt: new Date(),
     });
 

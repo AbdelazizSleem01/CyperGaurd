@@ -20,6 +20,7 @@ interface AuthContextValue {
   login: (token: string, user: AuthUser) => void;
   logout: () => void;
   isAdmin: boolean;
+  isSuperAdmin: boolean;
 }
 
 const AuthContext = createContext<AuthContextValue>({
@@ -29,6 +30,7 @@ const AuthContext = createContext<AuthContextValue>({
   login: () => {},
   logout: () => {},
   isAdmin: false,
+  isSuperAdmin: false,
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -71,7 +73,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, token, isLoading, login, logout, isAdmin: user?.role === 'admin' }}
+      value={{ 
+        user, 
+        token, 
+        isLoading, 
+        login, 
+        logout, 
+        isAdmin: user?.role === 'admin' || user?.role === 'super-admin',
+        isSuperAdmin: user?.role === 'super-admin'
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -17,6 +17,7 @@ import {
   RiArrowRightSLine,
   RiInformationLine,
   RiRadarLine,
+  RiVipCrownLine,
 } from 'react-icons/ri';
 import { useAuth } from '../providers/AuthProvider';
 import { useTheme } from '../providers/ThemeProvider';
@@ -29,6 +30,7 @@ interface NavItem {
   href: string;
   icon: React.ReactNode;
   adminOnly?: boolean;
+  superAdminOnly?: boolean;
   badge?: string;
   badgeColor?: string;
 }
@@ -37,7 +39,7 @@ export function Sidebar() {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
-  const { user, logout, isAdmin } = useAuth();
+  const { user, logout, isAdmin, isSuperAdmin } = useAuth();
   const [collapsed, setCollapsed] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
@@ -82,13 +84,23 @@ export function Sidebar() {
       adminOnly: true
     },
     {
+      key: 'superAdmin',
+      href: `/${locale}/super-admin`,
+      icon: <RiVipCrownLine size={20} />,
+      superAdminOnly: true
+    },
+    {
       key: 'settings',
       href: `/${locale}/settings`,
       icon: <RiSettings3Line size={20} />
     },
   ];
 
-  const visibleItems = navItems.filter((item) => !item.adminOnly || isAdmin);
+  const visibleItems = navItems.filter((item) => {
+    if (item.superAdminOnly && !isSuperAdmin) return false;
+    if (item.adminOnly && !isAdmin) return false;
+    return true;
+  });
 
   const toggleSidebar = () => setCollapsed(!collapsed);
 

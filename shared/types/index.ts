@@ -15,7 +15,7 @@ export interface CreateCompanyDto {
 }
 
 // ─── User ─────────────────────────────────────────────────────────────────────
-export type UserRole = 'admin' | 'user';
+export type UserRole = 'super-admin' | 'admin' | 'user';
 
 export interface User {
   _id: string;
@@ -53,6 +53,7 @@ export interface PortResult {
   service: string;
   version?: string;
   product?: string;
+  banner?: string; // raw banner response or header from service
 }
 
 export interface SslResult {
@@ -90,6 +91,9 @@ export interface ScanResult {
   subdomains: SubdomainResult[];
   outdatedSoftware: OutdatedSoftware[];
   discoveredPaths: DiscoveredPath[];
+  // additional intelligence data
+  vulnerabilities?: Vulnerability[];
+  intelExtras?: Record<string, any>;
   startedAt: Date;
   completedAt?: Date;
   error?: string;
@@ -101,6 +105,16 @@ export interface OutdatedSoftware {
   latestVersion: string;
   severity: VulnerabilitySeverity;
   recommendation?: string;
+}
+
+
+export interface Vulnerability {
+  id?: string;
+  title: string;
+  description: string;
+  severity: VulnerabilitySeverity;
+  recommendation?: string;
+  source?: string;
 }
 
 // ─── Risk Assessment ─────────────────────────────────────────────────────────

@@ -70,6 +70,20 @@ export function isValidDomain(domain: string): boolean {
   return domainRegex.test(domain);
 }
 
+// ─── Domain normalization ─────────────────────────────────────────────────────
+export function normalizeDomain(input: string): string {
+  let value = input.trim();
+  try {
+    const url = new URL(value);
+    return url.hostname.toLowerCase();
+  } catch {
+    // not a full URL, strip protocol and trailing slashes
+    value = value.replace(/^https?:\/\//i, '');
+    value = value.replace(/\/+$/, '');
+    return value.toLowerCase();
+  }
+}
+
 export function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }

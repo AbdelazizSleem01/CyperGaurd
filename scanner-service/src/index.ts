@@ -21,6 +21,7 @@ import { breachesRouter } from './routes/breaches';
 import { reportsRouter } from './routes/reports';
 import { riskRouter } from './routes/risk';
 import { adminRouter } from './routes/admin';
+import { superAdminRouter } from './routes/superAdmin';
 import { dashboardRouter } from './routes/dashboard';
 import { settingsRouter } from './routes/settings';
 import { errorHandler } from './middleware/errorHandler';
@@ -79,6 +80,7 @@ app.use('/api/breaches', authenticateToken, breachesRouter);
 app.use('/api/reports', authenticateToken, reportsRouter);
 app.use('/api/risk', authenticateToken, riskRouter);
 app.use('/api/admin', authenticateToken, adminRouter);
+app.use('/api/super-admin', authenticateToken, superAdminRouter);
 app.use('/api/dashboard', authenticateToken, dashboardRouter);
 app.use('/api/settings', authenticateToken, settingsRouter);
 
